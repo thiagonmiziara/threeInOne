@@ -11,6 +11,8 @@ export const GlobalStyle = createGlobalStyle`
     --text-title: #3D3D4D;
     --text: #1C1C29;
     --text-light: #A09CB1;
+
+    accent-color: var(--blue);
   }
   
   * {
