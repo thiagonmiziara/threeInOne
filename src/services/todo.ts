@@ -7,7 +7,10 @@ export const getTasks = async () => {
   return tasks;
 };
 
-export const updateTask = async (taskId: number, editedTask: Object) => {
+export const updateTask = async (
+  taskId: number | undefined,
+  editedTask: Object
+) => {
   const task = (
     await api.put(`/todos/${taskId}`, {
       params: editedTask,
@@ -19,4 +22,14 @@ export const updateTask = async (taskId: number, editedTask: Object) => {
 
 export const deleteTask = async (taskId: number) => {
   await api.delete(`/todos/${taskId}`);
+};
+
+export const addTask = async (newTask: object) => {
+  const task = (
+    await api.post('/users', {
+      params: newTask,
+    })
+  ).data;
+
+  return task;
 };
